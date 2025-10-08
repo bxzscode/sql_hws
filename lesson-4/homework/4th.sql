@@ -194,7 +194,7 @@ order by Price desc;
 13. Select distinct Category , Price from products
 
 14. select * from employees
-where Age between 30 and 40 and departmentname = 'Marketing'
+where Age between 30 and 40 or departmentname = 'Marketing'
 
 15. select * from employees
 order by salary desc offset 10 rows fetch next 10 rows only;
@@ -284,7 +284,7 @@ where age < 30 and DepartmentName IN ('HR' , 'IT');
 where Email like '%@gmail.com%';
 
 26. select * from employees
-where salary > all (select salary from sales);
+where salary > all(select salary from employees where departmentname = 'Sales');
 
 27. drop table if exists orders
 CREATE TABLE Orders (
